@@ -9,7 +9,7 @@ public class GunController : MonoBehaviour
     [SerializeField]private string _gun = "Pistol";
     [SerializeField]private int _maxAmmoOfGun = 10;
     public float fireDelay = 1;
-    [SerializeField]private float _gunDamage = 2;
+    public float gunDamage = 2;
     [SerializeField]private GameObject _bullet;
     [SerializeField]private GameObject _beam;
     [SerializeField]private GameObject _shotGunBullet; 
@@ -53,12 +53,14 @@ public class GunController : MonoBehaviour
                 _currentAmmo = 10;
                 fireDelay = 1;
                 gunBullet = _bullet;
+                gunDamage = 2;
                 break;
             case "ShotGun":
                 _maxAmmoOfGun = 4;
                 _currentAmmo = 4;
                 fireDelay = 2;
                 gunBullet = _shotGunBullet;
+                gunDamage = 5;
                 break;
             
             case "BeamGun":
@@ -66,6 +68,7 @@ public class GunController : MonoBehaviour
                 _currentAmmo = 100;
                 fireDelay = 0.1f;
                 gunBullet = _beam;
+                gunDamage = 0.5f;
                 break;
         }
     }

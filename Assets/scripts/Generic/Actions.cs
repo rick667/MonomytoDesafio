@@ -15,4 +15,6 @@ public static class Actions
     public static Action<int> IsGameOff;
     public static Action isGameOver;
     public static Action<int> SetGameStatusNow;
+    public static Action<string> AddScore;
+    public static Action<int> SetHighestScore;
 }

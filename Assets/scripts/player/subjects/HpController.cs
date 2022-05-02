@@ -5,11 +5,15 @@ using UnityEngine;
 
 public class HpController : PlayerMovementController
 {
+    [SerializeField] GunController power;
+    [SerializeField] GameObject player;
     void Start()
     {
         Actions.LifeHasDiminished += TakeDamage;
         Actions.LifeHasRestored += RestoreHp;
         Actions.isGameOver += GameOver;
+        player = GameObject.FindWithTag("Player");
+        power = new GunController();
     }
     private void OnDisable()
     {
@@ -19,7 +23,7 @@ public class HpController : PlayerMovementController
     }
     void TakeDamage()
     {
-        hp -= 1;
+        hp -= power.gunDamage;
     }
     void RestoreHp()
     {

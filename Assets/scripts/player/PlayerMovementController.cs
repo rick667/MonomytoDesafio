@@ -40,25 +40,6 @@ public class PlayerMovementController : Characters
         newMovement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         newMovement = newMovement.normalized * spd * Time.deltaTime;
         _rb.MovePosition(transform.position + newMovement);
-        /*if(GameGenericsProperties.gameStatus == 1)
-        {
-            if(Input.GetKey("w"))
-            {
-                _rb.velocity = transform.forward * spd;
-            }
-            else if(Input.GetKey("s"))
-            {
-                _rb.velocity = -transform.forward * spd;
-            }
-            if(Input.GetKey("a"))
-            {
-                _rb.velocity = -transform.right * spd;
-            }
-            if(Input.GetKey("d"))
-            {
-                _rb.velocity = transform.right * spd;
-            }
-        }*/
     }    
 
 

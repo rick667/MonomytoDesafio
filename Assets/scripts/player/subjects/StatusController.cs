@@ -23,21 +23,15 @@ public class StatusController : MonoBehaviour
         switch(GameGenericsProperties.gameStatus)
         {
             case 0:
-            {
                 break;
-            }
             case 1:
-            {
+                //Actions.AddScore("Survive");
                 break;
-            }
             case 2:
-            {
+                //Actions.SetHighestScore(ScoreController.highScore);
                 break;
-            }
             default:
-            {
                 break;
-            }
         }
     }
 }

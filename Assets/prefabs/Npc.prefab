@@ -14,6 +14,10 @@ GameObject:
   - component: {fileID: 1032498393239486290}
   - component: {fileID: 611528795131669100}
   - component: {fileID: 8003087151545838978}
+  - component: {fileID: 7032080699705927020}
+  - component: {fileID: -1754093063409362617}
+  - component: {fileID: -3215571281719873651}
+  - component: {fileID: 127574024595056876}
   m_Layer: 0
   m_Name: Npc
   m_TagString: Npc
@@ -135,3 +139,67 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &7032080699705927020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2816287049537462134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76e28c774d7de5b4e95669b899f4843e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 10
+  spd: 5
+  NpcPrefab: {fileID: 2816287049537462134}
+--- !u!114 &-1754093063409362617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2816287049537462134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba13795f476d86f41af65e36f086e8f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rb: {fileID: 0}
+  agent: {fileID: 0}
+  _destination: {fileID: 0}
+  newMovement: {x: 0, y: 0, z: 0}
+  spd: 5
+  direction: {x: 0, y: 0, z: 0}
+  distance: 0
+  text: {fileID: 0}
+  hp: {fileID: 0}
+--- !u!114 &-3215571281719873651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2816287049537462134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80145bc0e6856b949aa02bed83a9dd8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: {fileID: 0}
+  inicial: {fileID: 127574024595056876}
+--- !u!114 &127574024595056876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2816287049537462134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e0f81aeff86e794da857d347ee800ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 0}
+  _moveSet: {fileID: 0}
