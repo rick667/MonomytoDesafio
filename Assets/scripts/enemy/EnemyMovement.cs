@@ -9,18 +9,26 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField]private Rigidbody _rb;
     public NavMeshAgent agent;
     [SerializeField]private GameObject _destination;
+    public GameObject attack;
     public Vector3 newMovement;
     public float spd = 5;
     public Vector3 direction;
     public float distance;
     public Text text;
     public EnemyResourcesController hp;
+    public float fireDelay = 2f;
+    public float lastFire;    
     void Start()
     {
         _destination = GameObject.FindWithTag("Player");
         _rb = GetComponent<Rigidbody>();
         agent = GetComponent<NavMeshAgent>();     
         hp = GetComponent<EnemyResourcesController>();
+        Actions.NpcAttack += Attack;
+    }
+    void OnDisable()
+    {
+        Actions.NpcAttack -= Attack;
     }
     void Update()
     {
@@ -38,7 +46,11 @@ public class EnemyMovement : MonoBehaviour
         {
             if(distance < 8)
             {
-                agent.isStopped = true;
+                if(fireDelay < (Time.time - lastFire))
+                {
+                    Attack(attack, gameObject);
+                }               
+            agent.isStopped = true;
             }else if(distance > 7 && distance < 16)
             {
                 agent.speed = 4;
@@ -53,5 +65,10 @@ public class EnemyMovement : MonoBehaviour
             agent.isStopped = true;
             hp.IsDied();
         }
+    }
+    public void Attack(GameObject attack, GameObject spot)
+    {
+        GameObject individualAttack = GameObject.Instantiate(attack,new Vector3(spot.transform.position.x, spot.transform.position.y, spot.transform.position.z), Quaternion.identity); 
+        lastFire = Time.time;    
     }
 }

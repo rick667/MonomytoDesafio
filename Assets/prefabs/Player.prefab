@@ -163,6 +163,8 @@ MonoBehaviour:
   spd: 5
   _rb: {fileID: 7674529905479072489}
   _gun: {fileID: -8554360125025266498}
+  PlayerTomouse: {x: 0, y: 0, z: 0}
+  newMovement: {x: 0, y: 0, z: 0}
 --- !u!114 &-4082733477353978920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +196,7 @@ MonoBehaviour:
   _gun: Pistol
   _maxAmmoOfGun: 10
   fireDelay: 1
-  _gunDamage: 2
+  gunDamage: 2
   _bullet: {fileID: 4168835828106753957, guid: 2e864b6a0d0be6e469ac3072a21f5f8e, type: 3}
   _beam: {fileID: 6689931616261140022, guid: 95e0b4050ee46734f89833c20a8f4200, type: 3}
   _shotGunBullet: {fileID: 4936405287388387637, guid: d0c08be95a09fc6488bc6714951a8862, type: 3}

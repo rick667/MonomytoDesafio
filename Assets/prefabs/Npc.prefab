@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8003087151545838978}
   - component: {fileID: 7032080699705927020}
   - component: {fileID: -1754093063409362617}
+  - component: {fileID: 7532660381600696935}
   - component: {fileID: -3215571281719873651}
   - component: {fileID: 127574024595056876}
   m_Layer: 0
@@ -151,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e28c774d7de5b4e95669b899f4843e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 10
+  hp: 5
   spd: 5
   NpcPrefab: {fileID: 2816287049537462134}
 --- !u!114 &-1754093063409362617
@@ -169,12 +170,31 @@ MonoBehaviour:
   _rb: {fileID: 0}
   agent: {fileID: 0}
   _destination: {fileID: 0}
+  attack: {fileID: 5350308494182271243, guid: 9b00662610e782642937195d12567691, type: 3}
   newMovement: {x: 0, y: 0, z: 0}
   spd: 5
   direction: {x: 0, y: 0, z: 0}
   distance: 0
   text: {fileID: 0}
   hp: {fileID: 0}
+  fireDelay: 2
+  lastFire: 0
+--- !u!114 &7532660381600696935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2816287049537462134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cd324de8a6a69d4ea72387dd945fa94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 0}
+  _resources: {fileID: -1754093063409362617}
+  fireDelay: 2
+  lastFire: 0
 --- !u!114 &-3215571281719873651
 MonoBehaviour:
   m_ObjectHideFlags: 0

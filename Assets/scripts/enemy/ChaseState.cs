@@ -6,8 +6,12 @@ public class ChaseState : BaseState
 {
     [SerializeField] EnemyMovement _moveSet;
 
-    public ChaseState(){}
+    public static ChaseState instance;
 
+    void Start()
+    {
+        instance = this;
+    }
     public override void PrepareState()
     {
         base.PrepareState();
@@ -21,11 +25,11 @@ public class ChaseState : BaseState
 
         _moveSet.MoveSet();
 
-        if(_moveSet.agent.isStopped == true)
+        if(_moveSet.distance < 10)
         {
-            owner.ChangeState(new ShottingState());
+            //owner.ChangeState(new ShottingState());
         }
-        if(_moveSet.distance > 10)
+        if(_moveSet.distance > 15)
         {
             owner.ChangeState(new AwarenessState());
         }

@@ -17,4 +17,5 @@ public static class Actions
     public static Action<int> SetGameStatusNow;
     public static Action<string> AddScore;
     public static Action<int> SetHighestScore;
+    public static Action<GameObject, GameObject> NpcAttack;
 }
