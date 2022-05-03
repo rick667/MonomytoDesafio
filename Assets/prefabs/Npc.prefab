@@ -169,7 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 0}
   agent: {fileID: 0}
-  _destination: {fileID: 0}
+  _destination: {fileID: 5277024987296500303, guid: b2e0fc91329668b4a8f979510601b2a8, type: 3}
   attack: {fileID: 5350308494182271243, guid: 9b00662610e782642937195d12567691, type: 3}
   newMovement: {x: 0, y: 0, z: 0}
   spd: 5
@@ -179,6 +179,7 @@ MonoBehaviour:
   hp: {fileID: 0}
   fireDelay: 2
   lastFire: 0
+  PlayerTomouse: {x: 0, y: 0, z: 0}
 --- !u!114 &7532660381600696935
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HpController : PlayerMovementController
+public class HpController : PlayerResourcesController
 {
     [SerializeField] GunController power;
     [SerializeField] GameObject player;
@@ -15,11 +15,15 @@ public class HpController : PlayerMovementController
         player = GameObject.FindWithTag("Player");
         power = new GunController();
     }
+    void Update()
+    {
+        GameOver();
+    }
     private void OnDisable()
     {
         Actions.LifeHasDiminished -= TakeDamage;
         Actions.LifeHasRestored -= RestoreHp;
-        Actions.isGameOver -= GameOver;
+        //Actions.isGameOver -= GameOver;
     }
     void TakeDamage()
     {
@@ -40,7 +44,7 @@ public class HpController : PlayerMovementController
     {
         if(hp <= 0)
         {
-            Actions.SetGameStatusNow(1);
+            Actions.SetGameStatusNow(2);
         }
     }
 }

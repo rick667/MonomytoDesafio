@@ -17,7 +17,9 @@ public class EnemyMovement : MonoBehaviour
     public Text text;
     public EnemyResourcesController hp;
     public float fireDelay = 2f;
-    public float lastFire;    
+    public float lastFire;   
+    private RaycastHit hit;
+    public Vector3 PlayerTomouse;     
     void Start()
     {
         _destination = GameObject.FindWithTag("Player");
@@ -33,7 +35,11 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         direction = transform.position - _destination.transform.position;
-        distance = direction.magnitude;       
+        distance = direction.magnitude;
+        PlayerTomouse = _destination.transform.position - transform.position;
+        PlayerTomouse.y = 0;
+        Quaternion newRotation = Quaternion.LookRotation(PlayerTomouse);
+        _rb.MoveRotation(newRotation);
     }
 
     public void Movement()
@@ -49,8 +55,10 @@ public class EnemyMovement : MonoBehaviour
                 if(fireDelay < (Time.time - lastFire))
                 {
                     Attack(attack, gameObject);
-                }               
-            agent.isStopped = true;
+                }         
+                agent.speed = 2;
+
+            //agent.isStopped = true;
             }else if(distance > 7 && distance < 16)
             {
                 agent.speed = 4;
@@ -65,10 +73,13 @@ public class EnemyMovement : MonoBehaviour
             agent.isStopped = true;
             hp.IsDied();
         }
+
     }
     public void Attack(GameObject attack, GameObject spot)
     {
         GameObject individualAttack = GameObject.Instantiate(attack,new Vector3(spot.transform.position.x, spot.transform.position.y, spot.transform.position.z), Quaternion.identity); 
-        lastFire = Time.time;    
+        lastFire = Time.time;
+        individualAttack.tag = "NpcAtk";
+    
     }
 }

@@ -13,7 +13,10 @@ public class EnemyResourcesController : Characters
 
     void Update()
     {
-        
+        if(hp < 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void OnTriggerEnter(Collider objCollider)
@@ -44,5 +47,10 @@ public class EnemyResourcesController : Characters
             Destroy(gameObject);
             //Invoke("Destroy", 2f);
         }
+    }
+
+    void OnDestroy()
+    {
+        Actions.AddScore("Npc");
     }
 }

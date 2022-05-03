@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class StatusController : MonoBehaviour
 {
+    [SerializeField]private GameObject _gameOver;
+    [SerializeField]private GameObject player;
 
     void OnEnable()
     {
@@ -12,6 +14,10 @@ public class StatusController : MonoBehaviour
     void OnDisable()
     {
         Actions.SetGameStatusNow -= SetGameStatus;
+    }
+    void Start()
+    {
+        GameObject.Instantiate(player, new Vector3(3,1,2), Quaternion.identity);
     }
     public void SetGameStatus(int newSataus)
     {
@@ -23,12 +29,13 @@ public class StatusController : MonoBehaviour
         switch(GameGenericsProperties.gameStatus)
         {
             case 0:
+                _gameOver.SetActive(false);
                 break;
             case 1:
-                //Actions.AddScore("Survive");
+                _gameOver.SetActive(false);
                 break;
             case 2:
-                //Actions.SetHighestScore(ScoreController.highScore);
+                _gameOver.SetActive(true);
                 break;
             default:
                 break;

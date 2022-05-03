@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnEnemy : MonoBehaviour
+public class SpawnBox : MonoBehaviour
 {
-    [SerializeField] public float spawnRatePerMinute = 10;
+    [SerializeField] public float spawnRatePerMinute = 30;
     public static int currentCount = 0;
-    [SerializeField] private EnemyFactory factory;
+    [SerializeField] public DropsFactory factory;
  
     void Update()
     {
         var targetCount = Time.time * (spawnRatePerMinute / 60);
         while (targetCount > currentCount)
         {
-            var inst = factory.ManufactureEnemy();
+            var inst = factory.ManufactureBox();
             currentCount++;
         }
     }

@@ -16,6 +16,8 @@ TagManager:
   - ShotGunCol
   - BeamGunCol
   - Beam
+  - NpcAtk
+  - Factory
   layers:
   - Default
   - TransparentFX

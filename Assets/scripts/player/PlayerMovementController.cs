@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class PlayerMovementController : Characters
+public class PlayerMovementController : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]private Rigidbody _rb;
@@ -36,10 +36,12 @@ public class PlayerMovementController : Characters
     }
     public void Movement()
     {
-
-        newMovement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        newMovement = newMovement.normalized * spd * Time.deltaTime;
-        _rb.MovePosition(transform.position + newMovement);
+        if(GameGenericsProperties.gameStatus == 1)
+        {
+            newMovement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            newMovement = newMovement.normalized * 5 * Time.deltaTime;
+            _rb.MovePosition(transform.position + newMovement);
+        }
     }    
 
 

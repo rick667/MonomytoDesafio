@@ -15,7 +15,7 @@ public class GunController : MonoBehaviour
     [SerializeField]private GameObject _shotGunBullet; 
     public GameObject gunBullet;
 
-    private int _currentAmmo;
+    public int _currentAmmo;
     public float LastFire = 0;
     public GameObject equippedGun;
     public GameObject myGun;
